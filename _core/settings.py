@@ -44,7 +44,8 @@ THIRD_PARTY_APPS = [
 
 MY_APPS =[
     'users',
-    'movies'
+    'movies',
+   
 ]
 INSTALLED_APPS = DJANGO_APPS + THIRD_PARTY_APPS + MY_APPS
 
@@ -133,3 +134,7 @@ DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
 
 AUTH_USER_MODEL = "users.User"
+
+REST_FRAMEWORK = {
+    "PAGE_SIZE":2
+}
