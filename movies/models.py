@@ -14,6 +14,7 @@ class Movie(models.Model):
     rating =  models.CharField(max_length=20, choices=AgeRestriction.choices, default=AgeRestriction.G)
     synopsis = models.TextField(default=None, null=True)
     user = models.ForeignKey("users.User", on_delete=models.CASCADE, related_name="movies")
+    order = models.ManyToManyField("users.User", through="movies.MovieOrder")
 
 class MovieOrder(models.Model):
     user = models.ForeignKey("users.User", on_delete=models.CASCADE, related_name="buys")
